@@ -20,7 +20,7 @@ const Player = () => {
   return (
     <div className="player-main">
       <div>
-        <ReactPlayer url={url} />
+        <ReactPlayer url={url} playing='true'/>
       </div>
 
       
