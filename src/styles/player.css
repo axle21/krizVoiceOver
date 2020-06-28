@@ -1,0 +1,23 @@
+
+.player-main div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+}
+
+.player-main button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 16px 32px;
+    border-radius: 12px;
+    
+}
+
+.player-main button:hover{
+    cursor: pointer;
+    background-color:#77665E
+}
+  
