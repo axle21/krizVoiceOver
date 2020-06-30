@@ -15,7 +15,7 @@ const App = () => {
     <header className="masthead">
       <div className="centered">
         <div className="site-branding">
-          <h1 className="site-title"><del>To All The Voice I Loved Before</del> </h1>
+          <h1 className="site-title"><del>To All The Voice I've Loved Before</del> </h1>
           <div className="header-right">
             <img src={logo} alt="Italian Trulli" width="10" height="10" />
           </div>

@@ -89,10 +89,12 @@ const showAboutMe = () => {
            
             
             }}>
-                This site will feature my dubbing attempts (mostly of 90s anime, kdrama *basta pag type ko yung storyline and iconic commercial). Im a 90s baby kaya iba ang passion ko for old style animes and programs. I'll be oe of the well known dubber here sa atin (gusto ko rin kasi marecognize for an iconic role or character :) ) So hope you enjoy my piece of heart on evry video listed below.
+            This site will feature my dubbing attempts (mostly of 90s anime's, kdrama *basta pag type ko yung storyline and iconic commercial). Im a 90s baby kaya iba ang passion ko for old style animes and programs. I love to dub and act especially to those emotionally-triggering scenes and episodes .I know someday i'll be one of the well known dubber here sa atin (gusto ko rin kasi marecognize for an iconic role or character :) ) So hope you enjoy my piece of heart on every video listed below.
+
+
             <br/>
             <br/>
-                The reason why i named it To All The Voice Ive Loved before is because I was greatly influenced by 90s anime iconic characters in which till now swayed me to be at my best everyday.</p>
+            The reason why i named it To All The Voice I've Loved Before is because I was greatly influenced by 90's anime's iconic characters in which till now swayed me to be at my best everyday.</p>
     </div>
     )
 
