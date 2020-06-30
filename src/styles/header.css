@@ -1,5 +1,52 @@
 body {font-family: sans-serif;}
 
+.site-branding {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin: 0 0 0;
+    padding: 1em 0;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    
+  }
+
+.site-branding h1 {
+    float: left;
+    color: #77665E;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 30px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+/* .header h1.site-title {
+    font-size: 50px;
+    font-weight: bold;
+  } */
+
+.header-right {
+float: right;
+height: 80px;
+width: 80px;
+}
+
+@media(max-width: 760px){
+
+  
+    .site-branding h1 {
+     
+      font-size: 16px; 
+      
+    }
+
+    .header-right {
+        float: right;
+        height: 50px;
+        width: 50px;
+        }
+  }
 
 .centered {
     margin: 0 auto;
@@ -17,17 +64,8 @@ Header styles minus menu
 --------------------------------------------------------------*/
 
 .masthead {
-    background: #B6A088;
+    background: #f1f1f1;
   	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
-}
-
-.site-title {
-    margin: 0 0 1em;
-    padding: 1em 0;
-    font-size: 2em;
-    font-weight: 300;
-    text-align: center;
-    color: black;
 }
 
 @media screen and (min-width: 44.44em) {
@@ -50,7 +88,7 @@ Header styles minus menu
 
 /* Card Based Layout - Base styles */
 body {
-  background: white;
+  background: #D9C998;
   line-height: 1.4;
 }
 
