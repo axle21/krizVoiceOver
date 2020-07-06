@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 /* Components */
 import Home from './components/home';
 import Player from './components/player';
@@ -17,7 +17,8 @@ const App = () => {
         <div className="site-branding">
           <h1 className="site-title"><del>To All The Voice I've Loved Before</del> </h1>
           <div className="header-right">
-            <img src={logo} alt="Italian Trulli" width="10" height="10" />
+          <Link to="/"><img src={logo} alt="Logo" width="10" height="10" /></Link>
+            
           </div>
 
 

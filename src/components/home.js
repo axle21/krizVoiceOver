@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
+import LogoChar from '../image/logoChar.png';
 import '../styles/home.css';
 
 const Home = () => {
@@ -12,8 +13,14 @@ const Home = () => {
 
 
     <div className="hero-text">
-        <h1 style={{fontSize:"40px"}}>Hi! My Name is Kris</h1>
-            <p style={{color:'#D9C998'}}>Welcome to my loading site :)</p>
+        
+        <img className="logoChar" src={LogoChar} alt="Logo"/>
+        <p style={{fontSize:"20px",color:"#D9c998"}}>Hi! My Name is </p>
+            <h1 style={{color:'#D9C998',
+                    fontFamily: 'Rock Salt, cursive'}}>
+                KRIS
+            </h1>
+            {/* <p style={{color:'#D9C998'}}>Welcome to my loading site :)</p> */}
         <button onClick={() => showAboutMe()}>About Me</button>
     </div>
     
@@ -100,7 +107,7 @@ const showAboutMe = () => {
   return (
     <React.Fragment>
     
-    <div style={bannerSize ? {height: "350px"} : {height: "100vh"}} className="hero-image" >
+    <div style={bannerSize ? {height: "400px"} : {height: "100vh"}} className="hero-image" >
        {aboutme}
     </div>
 
