@@ -1,0 +1,54 @@
+.blogCard{
+    margin-bottom: 2em;	
+    display: block;
+    
+    width: 100%;
+    border-radius: 15px;
+    background-color: #fff;
+    
+    /* font-size: 16px; */
+    
+    /* text-align: center; */
+}
+
+.blogCard button{
+    text-align: left;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    padding-left:28px;
+    padding-bottom:0px;
+    
+}
+
+.blogCard button:hover{
+    box-shadow: 3px 3px 8px hsl(0, 0%, 50%);
+    cursor: pointer;
+    
+    
+}
+
+.blogCard .blogcard-content {
+    padding-left:28px;
+    padding-right:28px;
+    padding-bottom:15px;
+    font-size: 16px;
+}
+
+.arrow {
+    border: solid #77665E;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+.right {
+transform: rotate(-45deg);
+-webkit-transform: rotate(-45deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }

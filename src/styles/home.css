@@ -4,6 +4,11 @@
 .main-area {
   margin-top: 1em;
 }
+span:hover {
+  color: #77665E;
+  cursor: pointer;
+  
+}
 
 .hero-image {
 

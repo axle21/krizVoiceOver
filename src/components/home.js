@@ -1,16 +1,17 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import Blog from '../components/blog';
+import Videos from '../components/videos';
 import LogoChar from '../image/logoChar.png';
 import '../styles/home.css';
 
+
 const Home = () => {
 
-    const [youtubeData, setYoutubeData] = useState([]);
-    const [load, setLoad] = useState(false);
-    const [error, setError] = useState('');
-    const [aboutme, setAboutme] = useState(
+    const [activePage, setActivePage] = useState(true)
+    const [bannerSize, setBannerSize] = useState(true);
 
+    const [aboutme, setAboutme] = useState(
+    
 
     <div className="hero-text">
         
@@ -26,61 +27,9 @@ const Home = () => {
     
     );
 
-    const [bannerSize, setBannerSize] = useState(true);
-
-    let history = useHistory();
-
-    const playVideo = (data) => {
-
-        localStorage.setItem('urlPlayer', data);
-        history.push("/player");
-    }
-
-    useEffect(() => {
-        axios.get('https://www.googleapis.com/youtube/v3/playlistItems?maxResults=50&playlistId=UUNacX3kBN4u-3MapN9N58Cg&part=id,snippet&key=AIzaSyBCn901RNgmNKmESeD-uuSeIVl9k8YJ8vc')
-            .then(res => {
-                setYoutubeData(res.data.items);
-                setLoad(true);
-            })
-            .catch(err => {
-                setError(err.message);
-                setLoad(true)
-            })
-
-    }, []);
-
-
-
-const videoList = youtubeData.map(data => {
-        if (load) {
-            return (
-            <React.Fragment key={data.snippet.resourceId.videoId}>
-                {error ? <>{error.message}</> : 
-                
-                <article className="card" >
-                    <button onClick={() => playVideo(data.snippet.resourceId.videoId)}>
-                    <figure className="thumbnail">
-                    <img src={data.snippet.thumbnails.default.url} alt="YoutubeImage"/>
-                    </figure>
-                    <div className="card-content">
-                        <h2>{data.snippet.title}</h2>
-                        <p>{data.snippet.description}</p>
-                    </div>
-
-                    </button>
-                </article>
-                
-                }
-            </React.Fragment>);
-        } else {
-            return (
-                <div key={data.snippet.resourceId.videoId}>
-                    Loading...
-                </div>
-            );
-        }
     
-})
+    
+
 
 
 const showAboutMe = () => {
@@ -104,6 +53,14 @@ const showAboutMe = () => {
     )
 
 }
+
+const changeView = (e) =>{
+    if(activePage !== e){
+        setActivePage(e)
+    }
+    
+}
+
   return (
     <React.Fragment>
     
@@ -113,50 +70,13 @@ const showAboutMe = () => {
 
         <main className="main-area">
             <div className="centered">
-                <section className="cards">
-
-                {videoList}
-
-                {/* <article className="card">
-                    <button>
-                    <figure className="thumbnail">
-                        <img src="http://placekitten.com/800/610" alt="meow" />
-                    </figure>
-                    <div className="card-content">
-                        <h2>Fluffy</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
-                    </div>
-                    </button>
-                </article>
-
-                <article className="card">
-                    <button>
-                    <figure className="thumbnail">
-                        <img src="http://placekitten.com/800/610" alt="meow" />
-                    </figure>
-                    <div className="card-content">
-                        <h2>Fluffy</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
-                    </div>
-                    </button>
-                </article>
-
-                <article className="card">
-                    <button>
-                    <figure className="thumbnail">
-                        <img src="http://placekitten.com/800/610" alt="meow" />
-                    </figure>
-                    <div className="card-content">
-                        <h2>Fluffy</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
-                    </div>
-                    </button>
-                </article> */}
-                   
-                </section>
+                <h1><span onClick={() =>changeView(true)} style={activePage ? {textDecoration: "underline" } : {textDecoration: ""}}>Videos</span> 
+                {' '}||{' '}
+                <span onClick={() => changeView(false)} style={!activePage ? {textDecoration: "underline" } : {textDecoration: ""}}>Blogs</span> </h1>
+                {
+                   activePage ?  <Videos/> : <Blog/>
+                }
+                
             </div>
         </main>
         </React.Fragment>
