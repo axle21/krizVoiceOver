@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
 .blogCard{
     margin-bottom: 2em;	
     display: block;
@@ -34,6 +36,11 @@
     padding-right:28px;
     padding-bottom:15px;
     font-size: 16px;
+     font-family: 'Rock Salt', cursive;
+    line-height: 2.5;
+    background-color: #fff;
+
+
 }
 
 .arrow {
